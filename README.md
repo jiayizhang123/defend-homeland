@@ -1,1 +1,5 @@
 # defend-homeland
+Defend Homeland is a tower-defense game that follows the story of humans trying to establish a new homeland, aka an immigration site. However, the nearby creatures aren’t happy about these changes and are on their way to attack the new homeland. The player takes the role of a security troop, building turrets around the map to kill the monsters and protect their newly found home. 
+The game had evolved from originally a mishmash of retro pixel style assets to hand drawn assets to suit the woodsy theme of the game. The map is a top down 2D drawing of the forest, with a mixture of top-down and side view for the enemy and turret sprites for the best readability. The game maintains a natural earthy colour palette to reflect the setting.
+The game is produced solely in Godot, with assets drawn in Clip Studio Paint. Sound effects are a mixture of hand made, and free to use. Currently, the prototype is only available on Windows PC’s with a hopefully Android port as development progresses.
+![alt text](https://github.com/jiayizhang123/defend-homeland/blob/main/demo1.png?raw=true)
