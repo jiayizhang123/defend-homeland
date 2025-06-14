@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3x4wdvt86tkd"]
+
+[ext_resource type="PackedScene" uid="uid://b2spt1lxh8mth" path="res://enemy/enemy1.tscn" id="1_8gclo"]
+
+[sub_resource type="Curve2D" id="Curve2D_2ngqj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 24, 600, 0, 0, 0, 0, 32, 568, 0, 0, 0, 0, 64, 552, 0, 0, 0, 0, 104, 528, 0, 0, 0, 0, 144, 504, 0, 0, 0, 0, 192, 504, 0, 0, 0, 0, 240, 520, 0, 0, 0, 0, 280, 536, 0, 0, 0, 0, 312, 520, 0, 0, 0, 0, 344, 512, 0, 0, 0, 0, 376, 488, 0, 0, 0, 0, 408, 488, 0, 0, 0, 0, 440, 472, 0, 0, 0, 0, 472, 456, 0, 0, 0, 0, 504, 432, 0, 0, 0, 0, 544, 384, 0, 0, 0, 0, 576, 384, 0, 0, 0, 0, 608, 360, 0, 0, 0, 0, 656, 344, 0, 0, 0, 0, 656, 296, 0, 0, 0, 0, 672, 264, 0, 0, 0, 0, 696, 216, 0, 0, 0, 0, 728, 168, 0, 0, 0, 0, 768, 152, 0, 0, 0, 0, 816, 136, 0, 0, 0, 0, 840, 176, 0, 0, 0, 0, 872, 216, 0, 0, 0, 0, 888, 256, 0, 0, 0, 0, 896, 296, 0, 0, 0, 0, 896, 328, 0, 0, 0, 0, 888, 368, 0, 0, 0, 0, 872, 392, 0, 0, 0, 0, 880, 416, 0, 0, 0, 0, 904, 464, 0, 0, 0, 0, 928, 488, 0, 0, 0, 0, 952, 504, 0, 0, 0, 0, 976, 496)
+}
+point_count = 37
+
+[node name="Path2D2a" type="Path2D"]
+curve = SubResource("Curve2D_2ngqj")
+
+[node name="PathFollow2D2a" type="PathFollow2D" parent="."]
+position = Vector2(24, 600)
+rotation = -1.32582
+loop = false
+
+[node name="enemy1" parent="PathFollow2D2a" instance=ExtResource("1_8gclo")]

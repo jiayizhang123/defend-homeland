@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="defend-homeland"
+config/description="Defend homeland is a scenic tower defense game. The player should deploy the turrets to eliminate the monsters to defend the homeland.
+--Jiayi Zhang, Finch Lahman, John Swiney Jr, and Ricardo Velasco Guachalla"
+config/version="1.0.1"
+run/main_scene="res://main_menu.tscn"
+config/features=PackedStringArray("4.2", "Mobile")
+config/icon="res://icon.png"
+
+[audio]
+
+general/text_to_speech=true
+
+[autoload]
+
+Config="*res://config.gd"
+
+[display]
+
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=3
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

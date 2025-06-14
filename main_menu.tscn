@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=3 uid="uid://cpnfpglqjcwpc"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_d8maj"]
+[ext_resource type="Texture2D" uid="uid://lrbwu4f4lwnr" path="res://asset/backgrounda.jpg" id="1_lsjsv"]
+[ext_resource type="Texture2D" uid="uid://bg87nivl04ap4" path="res://asset/speakera.png" id="3_t0gjj"]
+[ext_resource type="Texture2D" uid="uid://cikpedpi6bfap" path="res://hud/asset/arrow.png" id="4_cbes1"]
+[ext_resource type="Texture2D" uid="uid://d1ffy4bh4mthk" path="res://hud/asset/crosshair1.png" id="5_sdo87"]
+[ext_resource type="Texture2D" uid="uid://bd3lgyglkanxj" path="res://hud/asset/turret_01_mk1a.png" id="6_hrl67"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hbt2b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tk17t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d4sfv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_js1ax"]
+
+[node name="mainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 1153.0
+offset_bottom = 650.0
+script = ExtResource("1_d8maj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00173611
+anchor_top = 0.00307692
+anchor_right = -0.00173611
+anchor_bottom = 0.00307692
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1154.0
+offset_bottom = 650.0
+texture = ExtResource("1_lsjsv")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 118.0
+offset_right = 1025.0
+offset_bottom = 540.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 25.0
+offset_right = 769.0
+offset_bottom = 129.0
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "[rainbow freq=0.5 sat=0.8 val=0.8]Defend Homeland[/rainbow]"
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Start" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 139.0
+offset_right = 602.0
+offset_bottom = 210.0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hbt2b")
+text = "Start"
+
+[node name="Help" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 222.0
+offset_right = 601.0
+offset_bottom = 295.0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tk17t")
+text = "Help"
+
+[node name="Quit" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 309.0
+offset_right = 599.0
+offset_bottom = 380.0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d4sfv")
+text = "Quit"
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 239.0
+offset_right = 566.0
+offset_bottom = 288.0
+texture = ExtResource("3_t0gjj")
+
+[node name="Panel1" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 171.0
+offset_right = 891.0
+offset_bottom = 338.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_js1ax")
+
+[node name="Arrow" type="Sprite2D" parent="Panel/Panel1"]
+position = Vector2(153, 85)
+texture = ExtResource("4_cbes1")
+
+[node name="Crosshair1" type="Sprite2D" parent="Panel/Panel1"]
+position = Vector2(62, 89)
+texture = ExtResource("5_sdo87")
+
+[node name="Turret01Mk1a" type="Sprite2D" parent="Panel/Panel1"]
+position = Vector2(232, 89)
+texture = ExtResource("6_hrl67")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Panel/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
